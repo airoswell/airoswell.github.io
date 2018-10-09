@@ -1,0 +1,90 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+
+<head>
+
+  <meta content="text/html; charset=UTF-8" http-equiv=Content-Type><meta name=viewport content="width=device-width, initial-scale=1">
+
+  <title>Random Name Picker - Quickly Pick A Random Name</title>
+  <meta property="fb:page_id" content="176909722351736" />
+
+</head>
+
+<style type="text/css">
+
+  body{
+    padding: 30px;
+  }
+  .button {
+    background: #eee;
+    padding: 10px;
+    width:300px;
+    text-align: center;
+    display: inline-block;
+    font-size: 30px;
+  }
+
+  .button:hover{
+    background: #ddd;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .button:active{
+    background: #eee;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  #picked {
+    background: #248729;
+    color:#fff;
+    text-align: center;
+    font-size: 100px;
+    display:inline-block;
+    width:500px;
+  }
+
+  #name-picker{
+    text-align: center;
+  }
+
+</style>
+
+<script type="text/javascript">
+
+  $('body').on('touchstart', function() {});
+
+  names = "梁锦龙,刘栋,王浩然,李泽峰,谭芹,曹汉轩,朱文杰,沈明慧,李正阳,孟维,阙小淞,熊明达,白爱毓,曹嘉俊,曾德鑫,常春,陈椿尹,陈名渝,陈泉,陈思芯,陈天胤,陈挺,陈小龙,陈梓铭,陳智聰,邓尚源,邓梓彬,董君行,段曾稀,范杨宁,方泓锦,方江鑫,冯豪杰,高诚伸,顾唯琰,管子卿,郭千豪,郭玮,韩悦,何晓枫,洪杰钊,黄朵澜,黄建川,黄思童,黄翔羽,焦怡明,李京昭,李净波,李罗臻,李明蔚,李瑞,李欣然,李子楠,梁佩宜,梁言,林镕灏,林学而,林泽楷,刘丁玮,刘粮德,刘书航,刘轩玮,刘雨洁,陆佳妮,马浩喻,麦静微,潘孝富,潘星辰,丘奕信,邱誉聪,冉雪嫣,邵菲禹,沈长风,石瑞雪,史天朔,苏东钺,孙岸松,谭世龙,田彩玉,王政韬,王子涵,魏杨燊,吴湖帆,吴骁阳,吴中华,吴洲,夏雪,肖芷晴,萧振鹏,辛宛杰,许宸,薛珩,杨泽鹏,姚传捷,殷逸皓,袁春雪,张铭琛,张硕实,张吴忌,张艺威,郑曙键,郑玮涛,钟雨彤,朱纯凡,朱涛,庄正洋,邹枫,邹嘉进";
+
+  namelist = names.split(",");
+
+  
+  function pick() {
+    num = namelist.length;
+    picked_num = Math.floor(Math.random()*num);
+    document.getElementById("picked").innerHTML = namelist[picked_num];
+    namelist.splice(picked_num,1);
+    console.log(num);
+  }
+
+</script>
+
+<body>
+
+  <div id="name-picker">
+    <div id="picked">
+      等待
+    </div>
+
+    <div style="text-align: center;margin-top:20px">
+      <div onclick="pick()" class="button">点</div>
+    </div>
+  </div>
+  
+
+</body>
+
+</html>
